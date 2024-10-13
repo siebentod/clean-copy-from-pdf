@@ -11,11 +11,6 @@ function App() {
 
   return (
     <>
-      <Helmet>
-        <title>elochki</title>
-        <meta name="description" content="Коррекция кавычек" />
-        <meta name="keywords" content="Кавычки, Елочки, Лапки" />
-      </Helmet>
       <main>
         <Input done={done} setDone={setDone} setToastShown={setToastShown} />
       </main>
