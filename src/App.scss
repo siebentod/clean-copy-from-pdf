@@ -1,0 +1,151 @@
+$light-button: rgb(66, 65, 65);
+$light-button-hover: rgb(86, 85, 85);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+}
+
+:root {
+  font-family: Inter, Calibri, Verdana, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+.textarea-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border: 2px ridge whitesmoke;
+  overflow-y: hidden;
+  cursor: text;
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+    text-align: center;
+    // text-wrap: wrap;
+    resize: none;
+    border: 0;
+    overflow-y: hidden;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+a {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: inherit;
+
+  &:hover {
+    color: #c2c9d6;
+  }
+
+  &:active {
+    color: #1d1e20;
+  }
+}
+
+main {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  scrollbar-color: red;
+}
+
+footer {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  color: #494949;
+
+  a {
+    text-decoration: none;
+    color: white;
+    margin: 0 3px;
+  }
+}
+
+.links {
+  position: absolute;
+  left: 1dvw;
+  top: 1dvh;
+  text-align: center;
+  align-self: start;
+  justify-self: start;
+
+  a {
+    font-size: 0.938rem;
+
+    &:hover {
+      color: #c2c9d6;
+    }
+
+    &:active {
+      color: #1d1e20;
+    }
+  }
+
+  .link__github {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.87);
+    padding-bottom: 2px;
+    margin-bottom: 0;
+  }
+
+  .link__github i {
+    font-size: 10px !important;
+  }
+
+  .link__about {
+    margin-top: 0px;
+  }
+}
+
+.about {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+.about__main {
+  align-self: center;
+  max-width: 570px;
+  font-size: 18px;
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #c2c9d6;
+  }
+
+  a i {
+    font-size: 12px !important;
+  }
+}
+
+// button {
+//   border-radius: 8px;
+//   border: 1px solid transparent;
+//   padding: 0.6em 1.2em;
+//   font-size: 1em;
+//   cursor: pointer;
+//   transition: border-color 0.1s;
+//   color: rgba(255, 255, 255, 0.87);
+// }
