@@ -87,7 +87,7 @@ function Input({ done, setDone, setToastShown }) {
         <TextareaAutosize
           ref={textareaRef}
           value={input}
-          placeholder="Вставьте текст"
+          placeholder="Paste text here"
           onChange={(e) => handleInput(e)}
           autoFocus
           maxRows={30}
