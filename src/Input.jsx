@@ -21,13 +21,13 @@ function Input({ done, setDone, setToastShown }) {
     for (let i = 0; i < 40; i++) {
       console.log(text[i], text.charCodeAt(i).toString(16));
     }
-    let updatedText = text.replace(/\u00AD\n/g, '$1');
+    let updatedText = text.replace(/\u00AD\n/g, '');
 
-    updatedText = updatedText.replace(/-\n/g, '$1');
+    updatedText = updatedText.replace(/-\n/g, '');
 
-    updatedText = updatedText.replace(/ \n/g, ' $1');
+    updatedText = updatedText.replace(/ \n/g, ' ');
 
-    updatedText = updatedText.replace(/ \n/g, ' $1');
+    updatedText = updatedText.replace(/ \n/g, ' ');
     // updatedText = updatedText.replace(/"([^"]*)"/g, '«$1»');
     // updatedText = updatedText.replace(/'([^']*)'/g, '«$1»');
     // while (updatedText.match(/«(.*?)«/g))
