@@ -22,17 +22,20 @@ function Input({ done, setDone, setToastShown }) {
       console.log(text[i], text.charCodeAt(i).toString(16));
     }
     let updatedText = text.replace(
-      /\u00AD\n([а-яА-Яa-zA-Z«»"',.!?:–—-])/g,
-      '$1'
-    );
-    updatedText = updatedText.replace(/-\n([а-яА-Яa-zA-Z«»"',.!?:–—-])/g, '$1');
-    updatedText = updatedText.replace(
-      / \n([а-яА-Яa-zA-Z«»"',.!?:–—-])/g,
-      ' $1'
+      /([а-яА-Яa-zA-Z«»"',.!?:–—-])\u00AD\n([а-яА-Яa-zA-Z«»"',.!?:–—-])/g,
+      '$1$2'
     );
     updatedText = updatedText.replace(
-      / \n([а-яА-Яa-zA-Z«»"',.!?:–—-])/g,
-      ' $1'
+      /([а-яА-Яa-zA-Z«»"',.!?:–—-])-\n([а-яА-Яa-zA-Z«»"',.!?:–—-])/g,
+      '$1$2'
+    );
+    updatedText = updatedText.replace(
+      /([а-яА-Яa-zA-Z«»"',.!?:–—-]) \n([а-яА-Яa-zA-Z«»"',.!?:–—-])/g,
+      '$1 $2'
+    );
+    updatedText = updatedText.replace(
+      /([а-яА-Яa-zA-Z«»"',.!?:–—-]) \n([а-яА-Яa-zA-Z«»"',.!?:–—-])/g,
+      '$1 $2'
     );
     // updatedText = updatedText.replace(/"([^"]*)"/g, '«$1»');
     // updatedText = updatedText.replace(/'([^']*)'/g, '«$1»');
