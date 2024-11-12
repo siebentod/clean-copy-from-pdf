@@ -29,18 +29,18 @@ body {
   align-items: center;
   height: 100%;
   border: 2px ridge whitesmoke;
-  overflow-y: hidden;
+  overflow: hidden;
   cursor: text;
 
   textarea {
-    width: 100%;
+    width: 99%;
     height: 100%;
     color: whitesmoke;
     text-align: center;
     // text-wrap: wrap;
     resize: none;
     border: 0;
-    overflow-y: hidden;
+    overflow: hidden;
     &:focus {
       outline: none;
     }
