@@ -6,25 +6,34 @@ import toast from 'react-hot-toast';
 import { processPdf } from './lib';
 
 function Input({ done, setDone }) {
-function Input({ done, setDone }) {
   const [input, setInput] = useState('');
-  const [copied, setCopied] = useState(false);
   const [copied, setCopied] = useState(false);
   const textareaRef = useRef(null);
   // let numbers = [];
+
+  let currentToastId;
 
   const handleInput = (e) => {
     // console.log(e.target.value.length, ', ', input.length);
     if (Math.abs(e.target.value.length - input.length) > 1) {
       const processed = processPdf(e.target.value);
       setInput(processed);
+      if (currentToastId) {
+        toast.dismiss(currentToastId);
+      }
       if (e.target.value !== processed) {
         setDone(true);
         handleCopy(processed);
-        toast('New text is copied to the clipboard!');
+        currentToastId = toast('New text is copied to the clipboard!', {
+          id: 'unique-toast',
+          duration: 8000,
+        });
       } else {
         setDone(false);
-        toast('Nothing found to edit!', { duration: 3000 });
+        currentToastId = toast('Nothing found to edit!', {
+          id: 'unique-toast',
+          duration: 3000,
+        });
       }
     } else e.target.value = input;
 
@@ -33,7 +42,7 @@ function Input({ done, setDone }) {
   };
 
   const handleContainerClick = () => {
-    textareaRef.current.focus(); // Устанавливает фокус на textarea
+    textareaRef.current.focus();
   };
 
   const handleCopy = (input) => {
