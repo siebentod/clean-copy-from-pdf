@@ -6,9 +6,12 @@ import toast from 'react-hot-toast';
 import { processPdf } from './lib';
 
 function Input({ done, setDone }) {
+function Input({ done, setDone }) {
   const [input, setInput] = useState('');
   const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false);
   const textareaRef = useRef(null);
+  // let numbers = [];
 
   const handleInput = (e) => {
     // console.log(e.target.value.length, ', ', input.length);
@@ -52,6 +55,16 @@ function Input({ done, setDone }) {
   //   while (updatedText.match(/»(.*?)»/g))
   //     updatedText = updatedText.replace(/»(.*?)»/g, '"$1»');
 
+  //   // updatedText = updatedText.replace(/"\s{2,}"/g, ' ');
+  //   if (text !== updatedText) {
+  //     setDone(true);
+  //     setToastShown(true);
+  //   } else {
+  //     setDone(false);
+  //     setToastShown(false);
+  //   }
+  //   return updatedText;
+  // };
   //   // updatedText = updatedText.replace(/"\s{2,}"/g, ' ');
   //   if (text !== updatedText) {
   //     setDone(true);
