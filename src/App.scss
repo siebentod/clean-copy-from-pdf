@@ -29,18 +29,20 @@ body {
   align-items: center;
   height: 100%;
   border: 2px ridge whitesmoke;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
   overflow-y: hidden;
   cursor: text;
 
   textarea {
-    width: 100%;
+    width: 99%;
     height: 100%;
     color: whitesmoke;
     text-align: center;
     // text-wrap: wrap;
     resize: none;
     border: 0;
-    overflow-y: hidden;
+    overflow: hidden;
     &:focus {
       outline: none;
     }
@@ -149,3 +151,15 @@ footer {
 //   transition: border-color 0.1s;
 //   color: rgba(255, 255, 255, 0.87);
 // }
+
+.copy-button {
+  position: fixed;
+  bottom: 5dvh;
+  left: 50%;
+  transform: translate(-50%);
+  height: max-content;
+}
+
+button {
+  border: 1px solid hsl(240, 5%, 28%) !important;
+}
