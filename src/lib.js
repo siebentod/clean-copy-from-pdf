@@ -11,7 +11,7 @@ export const processPdf = (text) => {
   updatedText = updatedText.replace(/ \n/g, ' ');
 
   updatedText = updatedText.replace(/ \n/g, ' ');
-  updatedText = updatedText.replace(/\p{L}\n\p{L}/gu, ' ');
+  updatedText = updatedText.replace(/(\p{L})\n(\p{L})/gu, '$1 $2');
   // updatedText = updatedText.replace(/"([^"]*)"/g, '«$1»');
   // updatedText = updatedText.replace(/'([^']*)'/g, '«$1»');
   // while (updatedText.match(/«(.*?)«/g))
